@@ -1,0 +1,141 @@
+---
+BasedOnStyle: LLVM
+---
+Language: Cpp
+Standard: c++23
+ColumnLimit: 85
+TabWidth: 4
+IndentWidth: 4
+ContinuationIndentWidth: 0
+ConstructorInitializerIndentWidth: 2
+AccessModifierOffset: -2
+MaxEmptyLinesToKeep: 4
+UseTab: Never
+
+#============================================
+# ALIGNMENT
+#============================================
+AlignArrayOfStructures: Left
+AlignConsecutiveAssignments:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCompound: true
+  PadOperators: true
+  EnumAssignments: true
+AlignConsecutiveDeclarations:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignFunctionDeclarations: false
+  AlignFunctionPointers: false
+AlignConsecutiveMacros:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: true
+AlignConsecutiveShortCaseStatements:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCaseColons: true
+AlignOperands: AlignAfterOperator
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 2
+QualifierAlignment: Left
+
+#============================================
+# LINE/BRACKET BREAKING AND WRAPPING
+#============================================
+AlignAfterOpenBracket: true
+AllowAllArgumentsOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowShortBlocksOnASingleLine: Never
+AllowShortCaseExpressionOnASingleLine: true
+AllowShortCompoundRequirementOnASingleLine: true #_<template>,<concept>,<require>
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Inline #[None|Empty|Inline|InlineOnly|All]
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
+AllowShortLambdasOnASingleLine: All
+AllowShortLoopsOnASingleLine: true
+AllowShortNamespacesOnASingleLine: true
+AllowShortRecordOnASingleLine: Empty
+AlwaysBreakBeforeMultilineStrings: true
+BreakAfterOpenBracketBracedList: true
+BreakAfterOpenBracketFunction: true
+BreakAfterOpenBracketIf: true
+BreakAfterOpenBracketLoop: true
+BreakBeforeCloseBracketBracedList: true
+BreakBeforeCloseBracketFunction: false
+BreakBeforeCloseBracketIf: true
+BreakBeforeCloseBracketLoop: true
+BreakBeforeCloseBracketSwitch: false
+BreakBeforeConceptDeclarations: Always
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializers: BeforeComma #[BeforeColon|BeforeComma|AfterColon|AfterComma]
+BreakTemplateDeclarations: Yes
+Cpp11BracedListStyle: FunctionCall
+BinPackLongBracedList: true
+BinPackParameters: OnePerLine
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterFunction: true
+  AfterClass: false
+  AfterStruct: false
+  AfterEnum: false
+  AfterUnion: false
+  BeforeElse: false
+  BeforeCatch: false
+  BeforeWhile: false
+  IndentBraces: false
+  AfterNamespace: false
+  AfterCaseLabel: false
+  BeforeLambdaBody: false
+  AfterControlStatement: Never #[Always|Never|MultiLine]
+  SplitEmptyRecord: true
+  SplitEmptyFunction: false
+  SplitEmptyNamespace: false
+  # AfterRequiresExpression: true
+PackArguments:
+  BinPack: UseBreakAfter
+  BreakAfter: 3
+PackParameters:
+  BinPack: UseBreakAfter
+  BreakAfter: 2
+PackConstructorInitializers: Never #[Never|BinPack|CurrentLine|NextLine|NextLineOnly]
+
+#============================================
+# AUTOMATED INSERTION
+#============================================
+FixNamespaceComments: false
+InsertTrailingCommas: None
+IndentPPDirectives: Leave
+
+#============================================
+# INCLUDES
+#============================================
+IncludeBlocks: Preserve #[Preserve|Regroup|Merge]
+NamespaceIndentation: Inner # [None|Inner|All]
+RequiresExpressionIndentation: OuterScope
+RequiresClausePosition: WithPreceding #[OwnLine|OwnLineWithBrace|WithPreceding|WithFollowing|SingleLine]
+SpaceAfterOperatorKeyword: true
+SpaceAfterTemplateKeyword: false
+SpaceBeforeCaseColon: true
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeEnumUnderlyingTypeColon: false
+SpaceBeforeParens: Custom
+SpaceBeforeParensOptions:
+  AfterControlStatements: true
+  AfterFunctionDefinitionName: false
+  AfterFunctionDeclarationName: false
+  AfterOverloadedOperator: true
+  AfterRequiresInClause: true
+  AfterRequiresInExpression: true
+  BeforeNonEmptyParentheses: false
+SpaceBeforeRangeBasedForLoopColon: true
+SpacesBeforeTrailingComments: 2
+#   SpacesInBlockComments: true
+# WrapNamespaceBodyWithEmptyLines: Always
+EmptyLineBeforeAccessModifier: Always #[LogicalBlock|Leave|Always]
+...

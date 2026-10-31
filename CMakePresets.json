@@ -1,0 +1,56 @@
+{
+  "version": 10,
+  "cmakeMinimumRequired": {
+    "major": 4,
+    "minor": 3,
+    "patch": 3
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_CXX_STANDARD": "23",
+        "CMAKE_CXX_STANDARD_REQUIRED": "ON"
+      }
+    },
+    {
+      "name": "windows",
+      "inherits": "base",
+      "generator": "Visual Studio 18 2026"
+    },
+    {
+      "name": "linux-debug",
+      "inherits": "base",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++"
+      }
+    },
+    {
+      "name": "linux-release",
+      "inherits": "base",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "windows-debug",
+      "configurePreset": "windows",
+      "configuration": "Debug"
+    },
+    {
+      "name": "windows-release",
+      "configurePreset": "windows",
+      "configuration": "Release"
+    }
+  ]
+}
